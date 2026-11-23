@@ -46,6 +46,37 @@ app.get("/", (req, res) => {
       imgUrl:
         "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyy9KhxeAxqAtvvP4p6Rongu71QMp17u_-EO6BSCCuevhCooVRLEZSVEkgJzza-8SOsM0mDXy5jOy51cuVe7I7hys8kUYKb9-_2QLL9I2DoPCd21vmCMxno9vT6jCOQud_dpDDdg/s400/P1150814ra.jpg",
     },
+    {
+      id: 6,
+      name: "Ancêtre",
+      ingredients:
+        "farine de tradition, farine d'épautre, eau, sel, levain, levure",
+      imgUrl:
+        "https://boulangeriedesrosiers.com/wp-content/uploads/2018/03/landbrot.jpg",
+    },
+    {
+      id: 7,
+      name: "Brissac",
+      ingredients:
+        "farine de meule, farine de seigle,farine de malt, eau, sel, levain, levure",
+      imgUrl:
+        "https://www.clickncook.fr/wp-content/uploads/2010/08/Pain-noir-1200x675.jpg",
+    },
+    {
+      id: 8,
+      name: "Tourte de Meule",
+      ingredients: "farine de meule, eau, sel, levain, levure",
+      imgUrl:
+        "https://commandermonpain.fr/w2016/wp-content/uploads/2020/03/tourte-de-meule.jpg",
+    },
+    {
+      id: 9,
+      name: "Sans Gulten",
+      ingredients:
+        "farine de mais, farien de quinoa, farine de riz,  eau, sel, huile d'olive, levure",
+      imgUrl:
+        "https://image.over-blog.com/JibUkOzDdvKrSVNlDE7LUnpUIpM=/filters:no_upscale()/image%2F0651923%2F20220120%2Fob_9aa4b4_pain-sans-gluten-facile.jpg",
+    },
   ]);
 });
 
