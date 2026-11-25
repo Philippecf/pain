@@ -17,7 +17,9 @@ const db = new Pool({
 });
 
 app.get("/pains", async (req, res) => {
+  console.log("start");
   const { rows } = await db.query("SELECT * FROM pains");
+  console.log(rows);
   res.json(rows);
 });
 

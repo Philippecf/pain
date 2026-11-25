@@ -1,0 +1,19 @@
+@import url("@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');");
+
+:root {
+  /* Fontfamilies */
+  --font-main: "Lora", sans-serif;
+
+  /* Fontweights */
+  --font-weight-normal-bold: 600;
+  --font-weight-title-h1: 900;
+  --font-weight-title-h2: 800;
+  --font-weight-title-h3: 700;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-main);
+  font-weight: var(--font-weight-normal);
+}
