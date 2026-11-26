@@ -4,9 +4,11 @@ import "../styles/Header.css";
 function Header() {
   return (
     <header>
-      <a href="/">
-        <img src={logo} alt="Logo-pain-hexagone" />
-      </a>
+      <p>
+        <a href="/">
+          <img src={logo} alt="Logo-pain-hexagone" />
+        </a>
+      </p>
       <h1>Co.Paing</h1>
     </header>
   );

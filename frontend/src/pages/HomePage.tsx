@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/Homepage.css";
 
 type Pain = {
   id: number;
@@ -22,12 +23,14 @@ export default function HomePage() {
 
   return (
     <>
-      <h1>Les Pains</h1>
+      <h2>Les Pains</h2>
       {pains.map((pain) => {
         return (
-          <section>
-            <p>{pain.name} </p>
-            <p>{pain.ingredients}</p>
+          <section className="bloc-pains">
+            <p key={pain.id} className="nom-pain">
+              {pain.name}
+            </p>
+            <p className="ingredients">{pain.ingredients}</p>
             <img src={pain.img_url} />
           </section>
         );
