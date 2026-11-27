@@ -1,11 +1,11 @@
 import "../styles/GlutenPage.css";
 import type { Pain } from "../types/pain";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export default function HomePage() {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const [pain, setPain] = useState<Pain | null>(null);
 
   useEffect(() => {
@@ -17,6 +17,15 @@ export default function HomePage() {
     fetchdata();
   }, []);
 
+  const DeletePain = async () => {
+    if (confirm("êtes vous sur de votre choix?")) {
+      await fetch(`http://localhost:4512/pains/${id}`, {
+        method: "DELETE",
+      });
+      navigate("/");
+    }
+  };
+
   if (pain === null) {
     return <p>Waiting for Log n°{id}...</p>;
   }
@@ -24,9 +33,12 @@ export default function HomePage() {
   return (
     <>
       <h2>Gluten</h2>
-      <p>
-        {pain.name}(n°{id})
-      </p>
+      <article>
+        <h3>
+          {pain.name}(n°{id})<button onClick={DeletePain}>X</button>
+        </h3>
+        <p>{pain.ingredients}</p>
+      </article>
     </>
   );
 }
