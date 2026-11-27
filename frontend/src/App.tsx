@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/gluten" element={<GlutenPage />} />
+        <Route path="/:id" element={<GlutenPage />} />
       </Routes>
     </>
   );

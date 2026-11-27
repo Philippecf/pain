@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react";
 import "../styles/Homepage.css";
-
-type Pain = {
-  id: number;
-  name: string;
-  ingredients: string;
-  img_url: string;
-};
+import type { Pain } from "../types/pain";
+import { Link } from "react-router";
 
 export default function HomePage() {
   const [pains, setPain] = useState<Pain[]>([]);
+
   useEffect(() => {
     async function fetchdata() {
-      console.log("start");
       const rawdata = await fetch("http://localhost:4512/pains");
-      console.log(rawdata);
       const cleanData = (await rawdata.json()) as Pain[];
       setPain(cleanData);
     }
@@ -28,7 +22,7 @@ export default function HomePage() {
         return (
           <section className="bloc-pains">
             <p key={pain.id} className="nom-pain">
-              {pain.name}
+              <Link to={`/${pain.id}`}>{pain.name}</Link>
             </p>
             <p className="ingredients">{pain.ingredients}</p>
             <img src={pain.img_url} />

@@ -23,6 +23,21 @@ app.get("/pains", async (req, res) => {
   res.json(rows);
 });
 
+app.get("/pains/:id", async (req, res) => {
+  const { rows } = await db.query(
+    "SELECT id, name, ingredients, img_url FROM pains WHERE id=$1",
+    [Number(req.params.id)],
+  );
+  res.json(rows[0]);
+});
+
+app.delete("/pains/:id", async (req, res) => {
+  const { rows } = await db.query("DELETE FROM pains WHERE id=$1", [
+    Number(req.params.id),
+  ]);
+  res.json(rows[0]);
+});
+
 app.listen(PORT, () => {
   console.log(`API available on http://localhost:${PORT} !`);
 });
